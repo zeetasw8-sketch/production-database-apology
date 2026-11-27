@@ -16,6 +16,7 @@ let content = readFileSync(join(here, "line.txt"), "utf8");
 content = content.replace(/\n$/, "").replace(/\r$/, "");
 
 // The gate: present, at most 200 characters, one line, real text.
+// The 200-character ceiling is the competition's own limit for this entry.
 if (content.length === 0) throw new Error("nothing to submit: line.txt is empty");
 if (content.length > 200) throw new Error(`too long: ${content.length} characters, ceiling is 200`);
 if (content.trim() === "") throw new Error("nothing but whitespace: the entry has no real text");
